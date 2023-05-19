@@ -1,8 +1,14 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gwendolyn {
+  font-family: "Gwendolyn", sans-serif;
+  font-weight: 700;
 }
 
 .logo {
