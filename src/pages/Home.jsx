@@ -12,7 +12,7 @@ const Home = () => {
             <em>clean, efficient code</em>.
           </h3>
           <Social />
-          <div className='flex gap-10'>
+          <div className='flex flex-col sm:flex-row gap-5 sm:gap-10'>
             <a
               className='cursor-pointer border-white border-2 hover:bg-white hover:text-black text-white text-center font-bold p-2 md:py-3 md:px-8 rounded-xl lg:rounded-full hover:shadow'
             >
