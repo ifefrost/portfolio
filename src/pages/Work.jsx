@@ -1,5 +1,6 @@
 import profile from "../assets/profile.png";
 import placeholder from "../assets/placeholder.jpg";
+import tmsn from "../assets/tmsn.png";
 import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
 const Work = () => {
   return (
@@ -17,7 +18,7 @@ const Work = () => {
             <em>keen eye for detail</em> and a <em>dedication</em> to{" "}
             <em>clean, efficient code</em>.
           </h3>
-          <div className='flex flex-col gap-10 py-4'>
+          <div className='flex flex-col gap-10 py-4 items-start'>
             <a
               href='https://www.linkedin.com/in/ifeoluwaladipo/'
               target='_blank'
@@ -50,30 +51,30 @@ const Work = () => {
       </div>
       <div>
         <h3 className='font-bold sm:text-[1.75rem] text-[1.25rem] dark:text-white mt-24 mb-12'>
-          Languages and technologies I'm currently using
+          Languages and Technologies I'm currently using
         </h3>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5'>
           <div className='bg-white rounded-xl shadow-md p-5'>
             <h4 className='text-2xl mb-2'>Javascript</h4>
             <p className='text-gray-600'>
-              React, Next, Angular, Node, Express, Typescript
+              React, Next, Node, Express, Typescript
             </p>
           </div>
           <div className='bg-white rounded-xl shadow-md p-5'>
             <h4 className='text-2xl mb-2'>Python</h4>
-            <p className='text-gray-600'>Django, Flask, Scrapy, Pandas</p>
+            <p className='text-gray-600'>Django, Selenium</p>
           </div>
           <div className='bg-white rounded-xl shadow-md p-5'>
             <h4 className='text-2xl mb-2'>PHP</h4>
-            <p className='text-gray-600'>Laravel, CodeIgniter, Wordpress</p>
+            <p className='text-gray-600'>Laravel, Wordpress</p>
           </div>
           <div className='bg-white rounded-xl shadow-md p-5'>
             <h4 className='text-2xl mb-2'>Databases</h4>
-            <p className='text-gray-600'>MySQL, PostgreSQL, MongoDB</p>
+            <p className='text-gray-600'>MySQL, MongoDB</p>
           </div>
           <div className='bg-white rounded-xl shadow-md p-5'>
             <h4 className='text-2xl mb-2'>Other</h4>
-            <p className='text-gray-600'>TailwindCSS, Bootstrap, Git</p>
+            <p className='text-gray-600'>TailwindCSS, Bootstrap, Git, ASP.Net</p>
           </div>
         </div>
       </div>
@@ -84,27 +85,42 @@ const Work = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
           <div className=' md:order-2'>
             <img
-              src={placeholder}
-              alt='placeholder project screenshot'
+              src={tmsn}
+              alt='Screenshot of the movie social network website'
               className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0'
             />
           </div>
           <div className='p-10 dark:text-white md:order-1'>
-            <h4 className='text-2xl mb-2'>Project 1</h4>
-            <p className='text-gray-600'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              voluptatum, doloribus, asperiores, quas quibusdam velit voluptates
-              unde nostrum magni labore tempora! Quas, itaque voluptatem.
-              Quisquam, iure. Accusamus quas sapiente officiis voluptatum,
-              voluptatem deleniti voluptas laboriosam sint exercitationem,
-              nostrum, porro magni. Quos, illo.
+            <h4 className='text-2xl mb-2'>The Movie Social Network</h4>
+            <p className='text-gray-400'>
+              This project is a social network for movie lovers. It allows users
+              to create accounts, add movies to their watchlist, and review
+              movies. It also allows users to follow other users and see their
+              reviews. It was bundled with Vite using React and TailwindCSS on
+              the frontend and Node, Express, and MongoDB on the backend. It is
+              hosted on Vercel and Railways. It was built as a portfolio project
+              in collaboration with two other developers:{" "}
+              <a
+                href='https://collinkavaner.com' target="_blank" rel="noreferrer"
+                className='italic text-rose-700 border-b-2 border-b-rose-700 border-opacity-0 hover:border-opacity-100 transition-all duration-300 ease-in'
+              >
+                Collin Kavaner
+              </a>{" "}
+              and{" "}
+              <a
+                href='https://github.com/kwinfia' target="_blank" rel="noreferrer"
+                className='italic text-rose-700 border-b-2 border-b-rose-700 border-opacity-0 hover:border-opacity-100 transition duration-300 ease-in'
+              >
+                Kwinnie Mae Fianza
+              </a>
             </p>
-            <button className='bg-rose-700 text-white rounded-xl shadow-md mt-5 px-5 p-2'>
-              check it out
+            <button className='bg-rose-700 text-white rounded-xl mt-5 shadow-md px-5 p-2 hover:bg-red-900 transition duration-300'
+            onClick={()=>window.open('https://ifefrost-tmsn.vercel.app')}>
+              Check it out
             </button>
           </div>
           <div className='relative md:order-3'>
-          <img
+            <img
               src={placeholder}
               alt='placeholder project screenshot'
               className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0'
@@ -112,7 +128,7 @@ const Work = () => {
           </div>
           <div className='p-10 dark:text-white md:order-4'>
             <h4 className='text-2xl mb-2'>Project 2</h4>
-            <p className='text-gray-600'>
+            <p className='text-gray-400'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
               voluptatum, doloribus, asperiores, quas quibusdam velit voluptates
               unde nostrum magni labore tempora! Quas, itaque voluptatem.
@@ -120,12 +136,12 @@ const Work = () => {
               voluptatem deleniti voluptas laboriosam sint exercitationem,
               nostrum, porro magni. Quos, illo.
             </p>
-            <button className='bg-rose-700 text-white rounded-xl shadow-md mt-5 px-5 p-2'>
+            <button className='bg-rose-700 text-white rounded-xl shadow-md mt-5 px-5 p-2 hover:bg-rose-900'>
               check it out
             </button>
           </div>
           <div className='relative md:order-6'>
-          <img
+            <img
               src={placeholder}
               alt='placeholder project screenshot'
               className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0'
@@ -133,7 +149,7 @@ const Work = () => {
           </div>
           <div className='p-10 dark:text-white md:order-5'>
             <h4 className='text-2xl mb-2'>Project 3</h4>
-            <p className='text-gray-600'>
+            <p className='text-gray-400'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
               voluptatum, doloribus, asperiores, quas quibusdam velit voluptates
               unde nostrum magni labore tempora! Quas, itaque voluptatem.
