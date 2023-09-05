@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdLightMode, MdDarkMode, MdMenu } from "react-icons/md";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useEffect, useState } from "react";
+import pdf from "../assets/john_resume.pdf";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const Nav = () => {
                   navOpen
                     ? "bg-rose-700 text-white"
                     : "text-gray-300 hover:bg-rose-900 hover:text-white"
-                } sm:hidden order-last cursor-pointer relative 
+                } md:hidden order-last cursor-pointer relative 
                   px-3 py-2 rounded-md text-sm font-medium `}
                 onClick={() => setNavOpen(!navOpen)}
               >
@@ -61,10 +62,10 @@ const Nav = () => {
             </DropdownMenu.Trigger>
 
             <DropdownMenu.Portal
-              className={`${navOpen ? "block" : "hidden"} sm:flex sm:space-x-4`}
+              className={`${navOpen ? "block" : "hidden"} md:flex md:space-x-4`}
             >
               <DropdownMenu.Content
-                className='flex flex-col sm:flex-row sm:space-x-4 right-2 top-11 bg-rose-900 sm:bg-inherit px-1 py-2 items-center sm:gap-0 rounded-b-xl w-max'
+                className='flex flex-col md:flex-row md:space-x-4 right-2 top-11 bg-rose-900 md:bg-inherit px-1 py-2 items-center md:gap-0 rounded-b-xl w-max'
                 sideOffset={5}
               >
                 <DropdownMenu.Item className='DropdownMenuItem'>
@@ -75,18 +76,18 @@ const Nav = () => {
                     Work
                   </Link>
                 </DropdownMenu.Item>
-                <DropdownMenu.Item >
+                {/* <DropdownMenu.Item>
                   <Link
                     to='/about'
                     className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'
                   >
                     About
                   </Link>
-                </DropdownMenu.Item>
+                </DropdownMenu.Item> */}
                 <DropdownMenu.Item className='DropdownMenuItem'>
-                  <h1 className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'>
+                  <a href={pdf} target="_blank" className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'>
                     Resume
-                  </h1>
+                  </a>
                 </DropdownMenu.Item>
                 <DropdownMenu.Item className='DropdownMenuItem'>
                   <Link
@@ -107,12 +108,12 @@ const Nav = () => {
                   >
                     {theme ? (
                       <div className='flex gap-2 items-center'>
-                        <span className='sm:sr-only'>Set Light Mode</span>
+                        <span className='md:sr-only'>Set Light Mode</span>
                         <MdLightMode />
                       </div>
                     ) : (
                       <div className='flex gap-2 items-center'>
-                        <span className='sm:sr-only'>Set Dark Mode</span>
+                        <span className='md:sr-only'>Set Dark Mode</span>
                         <MdDarkMode />
                       </div>
                     )}
@@ -124,24 +125,24 @@ const Nav = () => {
             </DropdownMenu.Portal>
           </DropdownMenu.Root>
           <div
-            className={`${navOpen ? "block" : "hidden"} sm:flex sm:space-x-4`}
+            className={`${navOpen ? "block" : "hidden"} md:flex md:space-x-4`}
           >
-            <div className='flex flex-col sm:flex-row sm:space-x-4 absolute sm:static right-2 top-11 mt-5 sm:mt-0 bg-rose-900 sm:bg-inherit px-1 py-2 items-center sm:gap-0 rounded-b-xl w-max'>
+            <div className='flex flex-col md:flex-row md:space-x-4 absolute md:static right-2 top-11 mt-5 md:mt-0 bg-rose-900 md:bg-inherit px-1 py-2 items-center md:gap-0 rounded-b-xl w-max'>
               <Link
                 to='/work'
                 className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3  py-2 rounded-md text-sm font-medium'
               >
                 Work
               </Link>
-              <Link
+              {/* <Link
                 to='/about'
                 className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'
               >
                 About
-              </Link>
-              <h1 className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'>
+              </Link> */}
+              <a href={pdf} target="_blank" className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'>
                 Resume
-              </h1>
+              </a>
               <Link
                 to='#'
                 className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'
@@ -157,12 +158,12 @@ const Nav = () => {
               >
                 {theme ? (
                   <div className='flex gap-2 items-center'>
-                    <span className='sm:sr-only'>Set Light Mode</span>
+                    <span className='md:sr-only'>Set Light Mode</span>
                     <MdLightMode />
                   </div>
                 ) : (
                   <div className='flex gap-2 items-center'>
-                    <span className='sm:sr-only'>Set Dark Mode</span>
+                    <span className='md:sr-only'>Set Dark Mode</span>
                     <MdDarkMode />
                   </div>
                 )}

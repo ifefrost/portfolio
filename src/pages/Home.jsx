@@ -12,13 +12,13 @@ const Home = () => {
             <em>clean, efficient code</em>.
           </h3>
           <Social />
-          <div className='flex flex-col lg:flex-row gap-5 sm:gap-5'>
-            <a className='cursor-pointer border-white border-2 hover:bg-white hover:text-black text-white text-center font-bold p-2 md:py-3 md:px-8 rounded-xl lg:rounded-3xl hover:shadow'>
+          <div className='flex flex-col lg:flex-row gap-5 sm:gap-5 j'>
+            <a className='cursor-pointer border-white border-2 hover:bg-white hover:text-black text-white text-center font-bold p-2 md:py-3 md:px-8 rounded-xl lg:rounded-3xl hover:shadow' href="./work">
               My Work Info
             </a>
-            <a className='cursor-pointer border-white border-2 hover:bg-white hover:text-black text-white text-center p-2 font-bold md:py-3 md:px-8 rounded-xl lg:rounded-3xl hover:shadow'>
+            {/* <a className='cursor-pointer border-white border-2 hover:bg-white hover:text-black text-white text-center p-2 font-bold md:py-3 md:px-8 rounded-xl lg:rounded-3xl hover:shadow'>
               More About Me
-            </a>
+            </a> */}
           </div>
         </div>
         <div className='rounded-full bg-[#fdb813] flex-1 lg:mt-auto hidden md:block'>

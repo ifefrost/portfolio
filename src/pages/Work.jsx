@@ -1,8 +1,88 @@
 import profile from "../assets/profile.png";
 import placeholder from "../assets/placeholder.jpg";
 import tmsn from "../assets/tmsn.png";
-import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import wordle from "../assets/wordle.png";
+import { useState, useId } from "react";
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaTwitter,
+  FaWindowClose,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 const Work = () => {
+  const [activeFilter, setActiveFilter] = useState([]);
+  const id = useId();
+  const toggleFilter = (filter) => {
+    if (activeFilter.includes(filter)) {
+      setActiveFilter(activeFilter.filter((item) => item !== filter));
+    } else {
+      setActiveFilter([...activeFilter, filter]);
+    }
+  };
+
+  let tech = [
+    "JavaScript",
+    "React",
+    "Next",
+    "Node",
+    "Express",
+    "Typescript",
+    "Python",
+    "Django",
+    "Selenium",
+    "PHP",
+    "Laravel",
+    "Wordpress",
+    "MySQL",
+    "MongoDB",
+    "Tailwind",
+    "Bootstrap",
+    "Git",
+    "ASP.Net",
+  ];
+  let projects = [
+    {
+      name: "The Movie Social Network",
+      description:
+        "This project is a social network for movie lovers. It allows users to create accounts, add movies to their watchlist, and review movies. It also allows users to follow other users and see their reviews. It was bundled with Vite using React and TailwindCSS on the frontend and Node, Express, and MongoDB on the backend. It is hosted on Vercel and Railways. It was built as a portfolio project in collaboration with two other developers",
+      image: tmsn,
+      link: "https://ifefrost-tmsn.vercel.app",
+      github: "ifefrost/tmsn",
+      tech: [
+        "React",
+        "Tailwind",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Vite",
+        "Git",
+        "JavaScript",
+      ],
+    },
+    {
+      name: "Wordle Clone",
+      description:
+        "This is a simple wordle clone web app that allows users to guess a 5 letter word. It was built using React and CSS and is hosted onVercel. I built this as part of a challenge by Josh Comeau",
+      image: wordle,
+      link: "https://wordle.vercel.app/",
+      github: "ifefrost/project-wordle",
+      tech: ["React", "CSS", "HTML", "JavaScript", "Git"],
+    },
+    {
+      name: "Placeholder",
+      description: "A placeholder",
+      image: placeholder,
+      link: "https://placeholder.vercel.app/",
+      github: "ifefrost/placeholder",
+      tech: ["React", "Next", "Node", "Express"],
+    },
+  ];
+  if (activeFilter.length > 0) {
+    projects = projects.filter((project) =>
+      project.tech.some((tech) => activeFilter.includes(tech))
+    );
+  }
   return (
     <div className='mx-auto px-2 md:px-8 xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs max-w-sm'>
       <div className='bg-rose-700 rounded-b-[32px] h-[40rem] gap-8 items-center py-10 px-10 lg:px-18 xl:px-24 overflow-hidden'>
@@ -51,43 +131,94 @@ const Work = () => {
       </div>
       <div>
         <h3 className='font-bold sm:text-[1.75rem] text-[1.25rem] dark:text-white mt-24 mb-12'>
-          Languages and Technologies I'm currently using
+          Tech, Tools & Projects
         </h3>
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5'>
-          <div className='bg-white rounded-xl shadow-md p-5'>
-            <h4 className='text-2xl mb-2'>Javascript</h4>
-            <p className='text-gray-600'>
-              React, Next, Node, Express, Typescript
-            </p>
-          </div>
-          <div className='bg-white rounded-xl shadow-md p-5'>
-            <h4 className='text-2xl mb-2'>Python</h4>
-            <p className='text-gray-600'>Django, Selenium</p>
-          </div>
-          <div className='bg-white rounded-xl shadow-md p-5'>
-            <h4 className='text-2xl mb-2'>PHP</h4>
-            <p className='text-gray-600'>Laravel, Wordpress</p>
-          </div>
-          <div className='bg-white rounded-xl shadow-md p-5'>
-            <h4 className='text-2xl mb-2'>Databases</h4>
-            <p className='text-gray-600'>MySQL, MongoDB</p>
-          </div>
-          <div className='bg-white rounded-xl shadow-md p-5'>
-            <h4 className='text-2xl mb-2'>Other</h4>
-            <p className='text-gray-600'>TailwindCSS, Bootstrap, Git, ASP.Net</p>
-          </div>
+        <div className='flex mx-auto flex-wrap justify-center gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-3'>
+          {tech.map((t) => (
+            <button
+              key={`${id}-${t}`}
+              onClick={() => toggleFilter(t)}
+              className='h-min px-[1rem] py-[0.3rem] shadow rounded-2xl hover:bg-rose-700 disabled:bg-rose-200 bg-rose-500 text-gray-200 hover:text-white'
+            >
+              {activeFilter.includes(t) ? (
+                <span className='flex gap-2 items-center'>
+                  {t}
+                  <FaWindowClose className='h-5 w-5' />
+                </span>
+              ) : (
+                t
+              )}
+            </button>
+          ))}
         </div>
       </div>
-      <div>
-        <h3 className='font-bold sm:text-[1.75rem] text-[1.25rem] dark:text-white mt-24 mb-12'>
-          Selected projects
-        </h3>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+      <div className='my-24 flex flex-wrap lg:flex-col justify-center gap-8'>
+        {projects.length > 0 ? (
+          projects.map((project) => (
+            <div
+              className='flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:mx-24 dark:border-gray-700 dark:bg-gray-800 group'
+              key={project.name}
+            >
+              <img
+                src={project.image}
+                alt={`Screenshot of ${project.name}`}
+                className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
+              />
+              <div className='flex flex-col justify-between p-4 leading-normal'>
+                <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-rose-700'>
+                  {project.name}
+                </h4>
+                <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
+                  {project.description}
+                </p>
+                <div className='flex justify-between'>
+                  <p className='flex flex-wrap gap-x-1 gap-y-1'>
+                    {project.tech.map((t) => (
+                      <span
+                        key={`${project.name}-${t}`}
+                        className='inline-block px-3 py-1 mr-2  text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200'
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </p>
+                  <div className='flex gap-5'>
+                    {project.github && (
+                      <a
+                        href={`https://github.com/${project.github}`}
+                        target='_blank'
+                        rel='noreferrer'
+                        className='text-gray-700 dark:text-gray-200 hover:text-rose-700'
+                      >
+                        <FaGithub className='h-5 w-5' />
+                      </a>
+                    )}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target='_blank'
+                        rel='noreferrer'
+                        className='text-gray-700 dark:text-gray-200 hover:text-rose-700'
+                      >
+                        <FaExternalLinkAlt className='h-5 w-5' />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className='text-center text-2xl dark:text-white'>
+            No projects match any of the selected filters
+          </p>
+        )}
+        {/* <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
           <div className=' md:order-2'>
             <img
               src={tmsn}
               alt='Screenshot of the movie social network website'
-              className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0'
+              className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0 border-gray-200 border-2'
             />
           </div>
           <div className='p-10 dark:text-white md:order-1'>
@@ -101,50 +232,67 @@ const Work = () => {
               hosted on Vercel and Railways. It was built as a portfolio project
               in collaboration with two other developers:{" "}
               <a
-                href='https://collinkavaner.com' target="_blank" rel="noreferrer"
+                href='https://collinkavaner.com'
+                target='_blank'
+                rel='noreferrer'
                 className='italic text-rose-700 border-b-2 border-b-rose-700 border-opacity-0 hover:border-opacity-100 transition-all duration-300 ease-in'
               >
                 Collin Kavaner
               </a>{" "}
               and{" "}
               <a
-                href='https://github.com/kwinfia' target="_blank" rel="noreferrer"
+                href='https://github.com/kwinfia'
+                target='_blank'
+                rel='noreferrer'
                 className='italic text-rose-700 border-b-2 border-b-rose-700 border-opacity-0 hover:border-opacity-100 transition duration-300 ease-in'
               >
                 Kwinnie Mae Fianza
               </a>
             </p>
-            <button className='bg-rose-700 text-white rounded-xl mt-5 shadow-md px-5 p-2 hover:bg-red-900 transition duration-300'
-            onClick={()=>window.open('https://ifefrost-tmsn.vercel.app')}>
+            <button
+              className='bg-rose-700 text-white rounded-xl mt-5 shadow-md px-5 p-2 hover:bg-red-900 transition duration-300'
+              onClick={() => window.open("https://ifefrost-tmsn.vercel.app")}
+            >
               Check it out
             </button>
           </div>
           <div className='relative md:order-3'>
             <img
-              src={placeholder}
-              alt='placeholder project screenshot'
-              className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0'
+              src={wordle}
+              alt='screenshots of the wordle clone web app'
+              className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0 border-gray-200 border-2'
             />
           </div>
           <div className='p-10 dark:text-white md:order-4'>
-            <h4 className='text-2xl mb-2'>Project 2</h4>
+            <h4 className='text-2xl mb-2'>Wordle Clone</h4>
             <p className='text-gray-400'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              voluptatum, doloribus, asperiores, quas quibusdam velit voluptates
-              unde nostrum magni labore tempora! Quas, itaque voluptatem.
-              Quisquam, iure. Accusamus quas sapiente officiis voluptatum,
-              voluptatem deleniti voluptas laboriosam sint exercitationem,
-              nostrum, porro magni. Quos, illo.
+              This is a simple wordle clone web app that allows users to guess a
+              5 letter word. It was built using React and CSS and is hosted on
+              Vercel. I built this as part of a challenge by{" "}
+              <a
+                href='https://www.joshwcomeau.com/'
+                target='_blank'
+                rel='noreferrer'
+                className='italic text-rose-700 border-b-2 border-b-rose-700 border-opacity-0 hover:border-opacity-100 transition duration-300 ease-in'
+              >
+                Josh Comeau
+              </a>
+              .
             </p>
-            <button className='bg-rose-700 text-white rounded-xl shadow-md mt-5 px-5 p-2 hover:bg-rose-900'>
-              check it out
+            <button
+              className='bg-rose-700 text-white rounded-xl shadow-md mt-5 px-5 p-2 hover:bg-rose-900'
+              onClick={() =>
+                window.open("https://wordle-ifeladipo.vercel.app/")
+              }
+            >
+              Check it out
             </button>
           </div>
           <div className='relative md:order-6'>
             <img
               src={placeholder}
               alt='placeholder project screenshot'
-              className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0'
+              className='rounded-xl object-cover h-[25rem] w-[34rem] lg:mx-0 border-gray-200 border-2'
             />
           </div>
           <div className='p-10 dark:text-white md:order-5'>
@@ -161,12 +309,12 @@ const Work = () => {
               check it out
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div>
-        <h3 className='font-bold sm:text-[1.75rem] text-[1.25rem] dark:text-white mt-24 mb-12'>
+      <div className='mt-24 mb-12'>
+        {/* <h3 className='font-bold sm:text-[1.75rem] text-[1.25rem] dark:text-white mt-24 mb-12'>
           Testimonials
-        </h3>
+        </h3> */}
       </div>
     </div>
   );
