@@ -1,5 +1,6 @@
 import profile from "../assets/profile.png";
 import Social from "../components/Social";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className='mx-auto px-2 md:px-8 xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs max-w-sm'>
@@ -13,9 +14,12 @@ const Home = () => {
           </h3>
           <Social />
           <div className='flex flex-col lg:flex-row gap-5 sm:gap-5 j'>
-            <a className='cursor-pointer border-white border-2 hover:bg-white hover:text-black text-white text-center font-bold p-2 md:py-3 md:px-8 rounded-xl lg:rounded-3xl hover:shadow' href="./work">
+            <Link
+              className='cursor-pointer border-white border-2 hover:bg-white hover:text-black text-white text-center font-bold p-2 md:py-3 md:px-8 rounded-xl lg:rounded-3xl hover:shadow'
+              to='/work'
+            >
               My Work Info
-            </a>
+            </Link>
             {/* <a className='cursor-pointer border-white border-2 hover:bg-white hover:text-black text-white text-center p-2 font-bold md:py-3 md:px-8 rounded-xl lg:rounded-3xl hover:shadow'>
               More About Me
             </a> */}
