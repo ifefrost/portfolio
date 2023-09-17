@@ -1,5 +1,5 @@
 import profile from "../assets/profile.png";
-import placeholder from "../assets/placeholder.jpg";
+import dashboard from "../assets/dashboard.png";
 import tmsn from "../assets/tmsn.png";
 import wordle from "../assets/wordle.png";
 import { useState, useId } from "react";
@@ -40,12 +40,13 @@ const Work = () => {
     "Bootstrap",
     "Git",
     "ASP.Net",
+    "API",
   ];
   let projects = [
     {
       name: "The Movie Social Network",
       description:
-        "This project is a social network for movie lovers. It allows users to create accounts, add movies to their watchlist, and review movies. It also allows users to follow other users and see their reviews. It was bundled with Vite using React and TailwindCSS on the frontend and Node, Express, and MongoDB on the backend. It is hosted on Vercel and Railways. It was built as a portfolio project in collaboration with two other developers",
+        "This project is a social network for movie lovers. It allows users to create accounts, add movies to their watchlist, and review movies. It also allows users to follow other users and see their reviews. It used a REST API to retrieve data from The Movie Database. It was bundled with Vite using React and TailwindCSS on the frontend and Node, Express, and MongoDB on the backend. It is hosted on Vercel and Railways. It was built as a portfolio project in collaboration with two other developers",
       image: tmsn,
       link: "https://ifefrost-tmsn.vercel.app",
       github: "ifefrost/tmsn",
@@ -57,6 +58,7 @@ const Work = () => {
         "MongoDB",
         "Vite",
         "Git",
+        "API",
         "JavaScript",
       ],
     },
@@ -70,12 +72,12 @@ const Work = () => {
       tech: ["React", "CSS", "HTML", "JavaScript", "Git"],
     },
     {
-      name: "Placeholder",
-      description: "A placeholder",
-      image: placeholder,
-      link: "https://placeholder.vercel.app/",
-      github: "ifefrost/placeholder",
-      tech: ["React", "Next", "Node", "Express"],
+      name: "Dashboard",
+      description: "This is a simple dashboard built with React, Tremor and TailwindCSS to dispaly dummy data. It was built as a portfolio project to showcase my skills with Data Visualization",
+      image: dashboard,
+      link: "https://dashboard-tawny-beta.vercel.app/",
+      github: "ifefrost/dashboard",
+      tech: ["React", "Tailwind", "Node", "Tremor", "Git", "JavaScript"],
     },
   ];
   if (activeFilter.length > 0) {
