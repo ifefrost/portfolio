@@ -2,6 +2,8 @@ import profile from "../assets/profile.png";
 import dashboard from "../assets/dashboard.png";
 import tmsn from "../assets/tmsn.png";
 import wordle from "../assets/wordle.png";
+import tcp from "../assets/tcp.png";
+
 import { useState, useId } from "react";
 import {
   FaLinkedinIn,
@@ -78,6 +80,13 @@ const Work = () => {
       link: "https://dashboard-tawny-beta.vercel.app/",
       github: "ifefrost/dashboard",
       tech: ["React", "Tailwind", "Node", "Tremor", "Git", "JavaScript"],
+    },
+    {
+      name: "TCP IVF Clinic",
+      description: "This is a website for a fertility clinic. It was built using Wordpress and Elementor. I built this as a freelance project for a client",
+      image: tcp,
+      link: "https://thecomfortersplace.com/",
+      tech: ["Wordpress", "Elementor", "PHP", "JavaScript"],
     },
   ];
   if (activeFilter.length > 0) {
@@ -158,16 +167,16 @@ const Work = () => {
         {projects.length > 0 ? (
           projects.map((project) => (
             <div
-              className='flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:mx-24 dark:border-gray-700 dark:bg-gray-800 group'
+              className='flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:mx-24 dark:border-gray-700 dark:bg-gray-800 group hoverlight'
               key={project.name}
             >
               <img
                 src={project.image}
                 alt={`Screenshot of ${project.name}`}
-                className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
+                className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out'
               />
               <div className='flex flex-col justify-between p-4 leading-normal'>
-                <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-rose-700'>
+                <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-rose-500'>
                   {project.name}
                 </h4>
                 <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
