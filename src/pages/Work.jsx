@@ -3,6 +3,7 @@ import dashboard from "../assets/dashboard.png";
 import tmsn from "../assets/tmsn.png";
 import wordle from "../assets/wordle.png";
 import tcp from "../assets/tcp.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { useState, useId } from "react";
 import {
@@ -97,12 +98,12 @@ const Work = () => {
   return (
     <div className='mx-auto px-2 md:px-8 xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs max-w-sm'>
       <div className='bg-rose-700 rounded-b-[32px] h-[40rem] gap-8 items-center py-10 px-10 lg:px-18 xl:px-24 overflow-hidden'>
-        <div className='flex gap-5 items-center mb-5'>
+        <motion.div initial={{x:300, opacity:0}} animate={{x:0, opacity:1}} transition={{duration:1}} className='flex gap-5 items-center mb-5'>
           <div className='rounded-full bg-[#fdb813] lg:mt-auto overflow-hidden md:block w-24'>
             <img src={profile} alt='side profile of ife' className='' />
           </div>
           <p className='text-white text-lg'>Hello, I'm Ife John Ladipo</p>
-        </div>
+        </motion.div>
         <div className='flex-1 flex flex-col gap-5 lg:px-40 md:px-20 px-5'>
           <h3 className='lg:text-[3rem] md:text-[2rem] text-[1.75rem] leading-none font-bold text-white text-center'>
             A <em>versatile</em> software engineer with a{" "}
@@ -111,7 +112,7 @@ const Work = () => {
           </h3>
           <div className='flex flex-col gap-10 py-4 items-start'>
             <a
-              href='https://www.linkedin.com/in/ifeoluwaladipo/'
+              href='https://www.linkedin.com/in/johnladipo/'
               target='_blank'
               rel='noreferrer'
               className='text-white hover:text-[#0077B5] font-semibold flex gap-5 items-center'

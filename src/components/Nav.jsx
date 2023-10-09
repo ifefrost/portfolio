@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdLightMode, MdDarkMode, MdMenu } from "react-icons/md";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useEffect, useState } from "react";
-import pdf from "../assets/john_resume.pdf";
+import pdf from "../assets/resume.pdf";
 
 const Nav = () => {
   const navigate = useNavigate();
