@@ -11,7 +11,6 @@ import {
   FaGithub,
   FaTwitter,
   FaWindowClose,
-  FaExternalLinkAlt,
 } from "react-icons/fa";
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState([]);
@@ -76,7 +75,8 @@ const Work = () => {
     },
     {
       name: "Dashboard",
-      description: "This is a simple dashboard built with React, Tremor and TailwindCSS to dispaly dummy data. It was built as a portfolio project to showcase my skills with Data Visualization",
+      description:
+        "This is a simple dashboard built with React, Tremor and TailwindCSS to dispaly dummy data. It was built as a portfolio project to showcase my skills with Data Visualization",
       image: dashboard,
       link: "https://dashboard-tawny-beta.vercel.app/",
       github: "ifefrost/dashboard",
@@ -84,7 +84,8 @@ const Work = () => {
     },
     {
       name: "TCP IVF Clinic",
-      description: "This is a website for a fertility clinic. It was built using Wordpress and Elementor. I built this as a freelance project for a client",
+      description:
+        "This is a website for a fertility clinic. It was built using Wordpress and Elementor. I built this as a freelance project for a client",
       image: tcp,
       link: "https://thecomfortersplace.com/",
       tech: ["Wordpress", "Elementor", "PHP", "JavaScript"],
@@ -98,7 +99,12 @@ const Work = () => {
   return (
     <div className='mx-auto px-2 md:px-8 xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs max-w-sm'>
       <div className='bg-rose-700 rounded-b-[32px] h-[40rem] gap-8 items-center py-10 px-10 lg:px-18 xl:px-24 overflow-hidden'>
-        <motion.div initial={{x:300, opacity:0}} animate={{x:0, opacity:1}} transition={{duration:1}} className='flex gap-5 items-center mb-5'>
+        <motion.div
+          initial={{ x: 300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className='flex gap-5 items-center mb-5'
+        >
           <div className='rounded-full bg-[#fdb813] lg:mt-auto overflow-hidden md:block w-24'>
             <img src={profile} alt='side profile of ife' className='' />
           </div>
@@ -167,58 +173,55 @@ const Work = () => {
       <div className='my-24 flex flex-wrap lg:flex-col justify-center gap-8'>
         {projects.length > 0 ? (
           projects.map((project) => (
-            <div
-              className='flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:mx-24 dark:border-gray-700 dark:bg-gray-800 group hoverlight'
-              key={project.name}
+            <a
+              href={project.link}
+              target='_blank'
+              rel='noreferrer'
+              className='text-gray-700 dark:text-gray-200 hover:text-rose-700'
             >
-              <img
-                src={project.image}
-                alt={`Screenshot of ${project.name}`}
-                className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out'
-              />
-              <div className='flex flex-col justify-between p-4 leading-normal'>
-                <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-rose-500'>
-                  {project.name}
-                </h4>
-                <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
-                  {project.description}
-                </p>
-                <div className='flex justify-between'>
-                  <p className='flex flex-wrap gap-x-1 gap-y-1'>
-                    {project.tech.map((t) => (
-                      <span
-                        key={`${project.name}-${t}`}
-                        className='inline-block px-3 py-1 mr-2  text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200'
-                      >
-                        {t}
-                      </span>
-                    ))}
+              <div
+                className='flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:mx-24 dark:border-gray-700 dark:bg-gray-800 group hoverlight'
+                key={project.name}
+              >
+                <img
+                  src={project.image}
+                  alt={`Screenshot of ${project.name}`}
+                  className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out'
+                />
+                <div className='flex flex-col justify-between p-4 leading-normal'>
+                  <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-rose-500'>
+                    {project.name}
+                  </h4>
+                  <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
+                    {project.description}
                   </p>
-                  <div className='flex gap-5'>
-                    {project.github && (
-                      <a
-                        href={`https://github.com/${project.github}`}
-                        target='_blank'
-                        rel='noreferrer'
-                        className='text-gray-700 dark:text-gray-200 hover:text-rose-700'
-                      >
-                        <FaGithub className='h-5 w-5' />
-                      </a>
-                    )}
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target='_blank'
-                        rel='noreferrer'
-                        className='text-gray-700 dark:text-gray-200 hover:text-rose-700'
-                      >
-                        <FaExternalLinkAlt className='h-5 w-5' />
-                      </a>
-                    )}
+                  <div className='flex justify-between'>
+                    <p className='flex flex-wrap gap-x-1 gap-y-1'>
+                      {project.tech.map((t) => (
+                        <span
+                          key={`${project.name}-${t}`}
+                          className='inline-block px-3 py-1 mr-2  text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200'
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </p>
+                    <div className='flex gap-5'>
+                      {project.github && (
+                        <a
+                          href={`https://github.com/${project.github}`}
+                          target='_blank'
+                          rel='noreferrer'
+                          className='text-gray-700 dark:text-gray-200 hover:text-rose-700'
+                        >
+                          <FaGithub className='h-5 w-5' />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))
         ) : (
           <p className='text-center text-2xl dark:text-white'>
