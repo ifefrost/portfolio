@@ -69,7 +69,7 @@ const Work = () => {
       description:
         "This is a simple wordle clone web app that allows users to guess a 5 letter word. It was built using React and CSS and is hosted onVercel. I built this as part of a challenge by Josh Comeau",
       image: wordle,
-      link: "https://wordle.vercel.app/",
+      link: "https://wordle-ifeladipo.vercel.app/",
       github: "ifefrost/project-wordle",
       tech: ["React", "CSS", "HTML", "JavaScript", "Git"],
     },
