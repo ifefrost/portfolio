@@ -51,8 +51,8 @@ const Nav = () => {
                 type='button'
                 className={`focus:outline-none ${
                   navOpen
-                    ? "bg-rose-700 text-white"
-                    : "text-gray-300 hover:bg-rose-900 hover:text-white"
+                    ? "bg-[#332E16] text-white"
+                    : "text-gray-300 hover:bg-[#332E16] hover:text-white"
                 } md:hidden order-last cursor-pointer relative 
                   px-3 py-2 rounded-md text-sm font-medium `}
                 onClick={() => setNavOpen(!navOpen)}
@@ -65,13 +65,13 @@ const Nav = () => {
               className={`${navOpen ? "block" : "hidden"} md:flex md:space-x-4`}
             >
               <DropdownMenu.Content
-                className='flex flex-col md:flex-row md:space-x-4 right-2 top-11 bg-rose-900 md:bg-inherit px-1 py-2 items-center md:gap-0 rounded-b-xl w-max'
+                className='flex flex-col md:flex-row md:space-x-4 right-2 bg-white dark:bg-slate-900 md:bg-inherit px-1 py-2 items-center md:gap-0 rounded-b-xl w-max'
                 sideOffset={5}
               >
                 <DropdownMenu.Item className='DropdownMenuItem'>
                   <Link
                     to='/work'
-                    className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3  py-2 rounded-md text-sm font-medium'
+                    className='text-center w-full text-black dark:text-white dark:hover:text-[#332E16] hover:bg-gray-100 hover:text-#332E16 px-3  py-2 rounded-md text-sm font-medium'
                   >
                     Work
                   </Link>
@@ -85,14 +85,14 @@ const Nav = () => {
                   </Link>
                 </DropdownMenu.Item> */}
                 <DropdownMenu.Item className='DropdownMenuItem'>
-                  <a href={pdf} target="_blank" className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'>
+                  <a href={pdf} target="_blank" className='text-center w-full text-black dark:text-white dark:hover:text-[#332E16] hover:bg-gray-100 hover:text-#332E16 px-3 py-2 rounded-md text-sm font-medium'>
                     Resume
                   </a>
                 </DropdownMenu.Item>
                 <DropdownMenu.Item className='DropdownMenuItem'>
                   <Link
                     to='#'
-                    className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'
+                    className='text-center w-full text-black dark:text-white dark:hover:text-[#332E16] hover:bg-gray-100 hover:text-#332E16 px-3 py-2 rounded-md text-sm font-medium'
                     onClick={() =>
                       (window.location = "mailto:john.ladipo@hotmail.com")
                     }
@@ -104,7 +104,7 @@ const Nav = () => {
                 <DropdownMenu.Item className='DropdownMenuItem'>
                   <button
                     onClick={toggleTheme}
-                    className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'
+                    className='text-center w-full text-black dark:text-white dark:hover:text-[#332E16] hover:bg-gray-100 hover:text-#332E16 px-3 py-2 rounded-md text-sm font-medium'
                   >
                     {theme ? (
                       <div className='flex gap-2 items-center'>
@@ -120,17 +120,17 @@ const Nav = () => {
                   </button>
                 </DropdownMenu.Item>
 
-                <DropdownMenu.Arrow className='bg-rose-900 z-10' />
+                <DropdownMenu.Arrow className='bg-[#332E16] z-10' />
               </DropdownMenu.Content>
             </DropdownMenu.Portal>
           </DropdownMenu.Root>
           <div
             className={`${navOpen ? "block" : "hidden"} md:flex md:space-x-4`}
           >
-            <div className='flex flex-col md:flex-row md:space-x-4 absolute md:static right-2 top-11 mt-5 md:mt-0 bg-rose-900 md:bg-inherit px-1 py-2 items-center md:gap-0 rounded-b-xl w-max'>
+            <div className='flex flex-col md:flex-row md:space-x-4 absolute md:static right-2 top-11 mt-5 md:mt-0 bg-[#332E16] md:bg-inherit px-1 py-2 items-center md:gap-0 rounded-b-xl w-max'>
               <Link
                 to='/work'
-                className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3  py-2 rounded-md text-sm font-medium'
+                className='text-center w-full text-black dark:text-white dark:hover:text-[#332E16] hover:bg-gray-100 hover:text-[#332E16] px-3  py-2 rounded-md text-sm font-medium'
               >
                 Work
               </Link>
@@ -140,12 +140,12 @@ const Nav = () => {
               >
                 About
               </Link> */}
-              <a href={pdf} target="_blank" className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'>
+              <a href={pdf} target="_blank" className='text-center w-full text-black dark:text-white dark:hover:text-[#332E16] hover:bg-gray-100 hover:text-[#332E16] px-3 py-2 rounded-md text-sm font-medium'>
                 Resume
               </a>
               <Link
                 to='#'
-                className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'
+                className='text-center w-full text-black dark:text-white dark:hover:text-[#332E16] hover:bg-gray-100 hover:text-[#332E16] px-3 py-2 rounded-md text-sm font-medium'
                 onClick={() =>
                   (window.location = "mailto:john.ladipo@hotmail.com")
                 }
@@ -154,7 +154,7 @@ const Nav = () => {
               </Link>
               <button
                 onClick={toggleTheme}
-                className='text-center w-full text-black dark:text-white dark:hover:text-rose-700 hover:bg-gray-100 hover:text-rose-700 px-3 py-2 rounded-md text-sm font-medium'
+                className='text-center w-full text-black dark:text-white dark:hover:text-[#332E16] hover:bg-gray-100 hover:text-[#332E16] px-3 py-2 rounded-md text-sm font-medium'
               >
                 {theme ? (
                   <div className='flex gap-2 items-center'>

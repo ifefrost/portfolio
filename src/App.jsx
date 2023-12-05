@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className='dark:bg-slate-900 bg-white min-h-screen flex flex-col'>
+    <div className='dark:bg-[#434852] bg-[#F0E3CE] min-h-screen flex flex-col'>
       <BrowserRouter>
         <Nav />
         <Routes>

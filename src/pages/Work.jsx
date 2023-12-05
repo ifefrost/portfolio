@@ -98,14 +98,14 @@ const Work = () => {
   }
   return (
     <div className='mx-auto px-2 md:px-8 xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs max-w-sm'>
-      <div className='bg-rose-700 rounded-b-[32px] h-[40rem] gap-8 items-center py-10 px-10 lg:px-18 xl:px-24 overflow-hidden'>
+      <div className='bg-[#96999B] rounded-b-[32px] h-[40rem] gap-8 items-center py-10 px-10 lg:px-18 xl:px-24 overflow-hidden'>
         <motion.div
           initial={{ x: 300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
           className='flex gap-5 items-center mb-5'
         >
-          <div className='rounded-full bg-[#fdb813] lg:mt-auto overflow-hidden md:block w-24'>
+          <div className='rounded-full bg-[#E0B589] lg:mt-auto overflow-hidden md:block w-24'>
             <img src={profile} alt='side profile of ife' className='' />
           </div>
           <p className='text-white text-lg'>Hello, I'm Ife John Ladipo</p>
@@ -156,7 +156,7 @@ const Work = () => {
             <button
               key={`${id}-${t}`}
               onClick={() => toggleFilter(t)}
-              className='h-min px-[1rem] py-[0.3rem] shadow rounded-2xl hover:bg-rose-700 disabled:bg-rose-200 bg-rose-500 text-gray-200 hover:text-white'
+              className='h-min px-[1rem] py-[0.3rem] shadow rounded-2xl hover:bg-[#332E16] disabled:bg-[#6B6752] bg-[#9D915A] text-gray-200 hover:text-white'
             >
               {activeFilter.includes(t) ? (
                 <span className='flex gap-2 items-center'>
@@ -175,21 +175,22 @@ const Work = () => {
           projects.map((project) => (
             <a
               href={project.link}
+              key={project.name}
               target='_blank'
               rel='noreferrer'
-              className='text-gray-700 dark:text-gray-200 hover:text-rose-700'
+              className='text-gray-700 dark:text-gray-200 hover:text-[#332E16]'
             >
               <div
-                className='flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:mx-24 dark:border-gray-700 dark:bg-gray-800 group hoverlight'
+                className='flex flex-col items-center bg-white border border-gray-200 rounded-lg overflow-hidden shadow md:flex-row md:mx-24 dark:border-gray-700 dark:bg-gray-800 group hoverlight'
                 key={project.name}
               >
                 <img
                   src={project.image}
                   alt={`Screenshot of ${project.name}`}
-                  className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out'
+                  className='object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none  grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out'
                 />
                 <div className='flex flex-col justify-between p-4 leading-normal'>
-                  <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-rose-500'>
+                  <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-[#9D915A]'>
                     {project.name}
                   </h4>
                   <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
@@ -206,18 +207,18 @@ const Work = () => {
                         </span>
                       ))}
                     </p>
-                    <div className='flex gap-5'>
+                    {/* <div className='flex gap-5'>
                       {project.github && (
                         <a
                           href={`https://github.com/${project.github}`}
                           target='_blank'
                           rel='noreferrer'
-                          className='text-gray-700 dark:text-gray-200 hover:text-rose-700'
+                          className='text-gray-700 dark:text-gray-200 hover:text-[#332E16] z-10'
                         >
                           <FaGithub className='h-5 w-5' />
                         </a>
                       )}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

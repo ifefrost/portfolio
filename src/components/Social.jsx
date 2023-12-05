@@ -6,7 +6,7 @@ const Social = () => {
         href='https://www.linkedin.com/in/ifeoluwaladipo/'
         target='_blank'
         rel='noreferrer'
-        className='text-white hover:text-[#0077B5]'
+        className='dark:text-white hover:text-[#0077B5]'
       >
         <FaLinkedinIn className='text-3xl' />
       </a>
@@ -14,7 +14,7 @@ const Social = () => {
         href='https://twitter.com/ifeladipo'
         target='_blank'
         rel='noreferrer'
-        className='text-white hover:text-[#1DA1F2]'
+        className='dark:text-white hover:text-[#1DA1F2]'
       >
         <FaTwitter className='text-3xl' />
       </a>
@@ -22,7 +22,7 @@ const Social = () => {
         href='https://github.com/ifefrost'
         target='_blank'
         rel='noreferrer'
-        className='text-white hover:text-black'
+        className='dark:text-white hover:text-black'
       >
         <FaGithub className='text-3xl' />
       </a>

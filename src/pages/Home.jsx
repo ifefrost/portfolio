@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     <div className='mx-auto px-2 md:px-8 xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs max-w-sm'>
-      <div className='bg-rose-700 md:rounded-b-[32px] h-[40rem] flex gap-8 items-center px-24 overflow-hidden'>
+      <div className='bg-[#96999B] md:rounded-b-[32px] h-[40rem] flex gap-8 items-center px-24 overflow-hidden'>
         <div className='flex-1 flex flex-col gap-5'>
           <p className='text-white text-lg'>Hello, I'm Ife John Ladipo</p>
           <h3 className='lg:text-[3rem] md:text-[2rem] text-[1.75rem] leading-none font-bold text-white'>
@@ -28,7 +28,7 @@ const Home = () => {
             </a> */}
           </div>
         </div>
-        <motion.div initial={{opacity:0, scale: 0.5}} animate={{opacity: 1, scale:1}} transition={{ease: [0, 0.71, 0.2, 1.01], type:"spring", stiffness:100}} className='rounded-full bg-[#fdb813] flex-1 lg:mt-auto hidden md:block'>
+        <motion.div initial={{opacity:0, scale: 0.5}} animate={{opacity: 1, scale:1}} transition={{ease: [0, 0.71, 0.2, 1.01], type:"spring", stiffness:100}} className='rounded-full bg-[#E0B589] flex-1 lg:mt-auto hidden md:block'>
           <motion.img inital={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5, delay:0.5}} src={profile} alt='side profile of ife' className='opacity-0' />
         </motion.div>
       </div>
