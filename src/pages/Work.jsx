@@ -24,7 +24,6 @@ const Work = () => {
   };
 
   let tech = [
-    "JavaScript",
     "React",
     "Next",
     "Node",
@@ -32,14 +31,10 @@ const Work = () => {
     "Typescript",
     "Python",
     "Django",
-    "Selenium",
     "PHP",
-    "Laravel",
-    "Wordpress",
+    "CMS",
     "MySQL",
-    "MongoDB",
-    "Tailwind",
-    "Bootstrap",
+    "NoSQL",
     "Git",
     "ASP.Net",
     "API",
@@ -57,7 +52,7 @@ const Work = () => {
         "Tailwind",
         "Node",
         "Express",
-        "MongoDB",
+        "NoSQL",
         "Vite",
         "Git",
         "API",
@@ -88,7 +83,7 @@ const Work = () => {
         "This is a website for a fertility clinic. It was built using Wordpress and Elementor. I built this as a freelance project for a client",
       image: tcp,
       link: "https://thecomfortersplace.com/",
-      tech: ["Wordpress", "Elementor", "PHP", "JavaScript"],
+      tech: ["Wordpress", "Elementor", "PHP", "JavaScript", "CMS"],
     },
   ];
   if (activeFilter.length > 0) {
@@ -156,7 +151,7 @@ const Work = () => {
             <button
               key={`${id}-${t}`}
               onClick={() => toggleFilter(t)}
-              className='h-min px-[1rem] py-[0.3rem] shadow rounded-2xl hover:bg-[#332E16] disabled:bg-[#6B6752] bg-[#9D915A] text-gray-200 hover:text-white'
+              className='h-min px-[1rem] py-[0.3rem] shadow rounded-2xl hover:bg-[#332E16] disabled:bg-[#6B6752] bg-[#E0B589] text-black hover:text-white'
             >
               {activeFilter.includes(t) ? (
                 <span className='flex gap-2 items-center'>
@@ -178,7 +173,7 @@ const Work = () => {
               key={project.name}
               target='_blank'
               rel='noreferrer'
-              className='text-gray-700 dark:text-gray-200 hover:text-[#332E16]'
+              className='text-gray-700 dark:text-gray-200 hover:text-[#E0B589]'
             >
               <div
                 className='flex flex-col items-center bg-white border border-gray-200 rounded-lg overflow-hidden shadow md:flex-row md:mx-24 dark:border-gray-700 dark:bg-gray-800 group hoverlight'
@@ -190,7 +185,7 @@ const Work = () => {
                   className='object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none  grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out'
                 />
                 <div className='flex flex-col justify-between p-4 leading-normal'>
-                  <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-[#9D915A]'>
+                  <h4 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-[#E0B589]'>
                     {project.name}
                   </h4>
                   <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
