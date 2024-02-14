@@ -1,0 +1,34 @@
+.gwendolyn {
+  font-family: "Gwendolyn", sans-serif;
+  font-weight: 700;
+}
+
+.hoverlight{
+  position: relative;
+}
+
+.hoverlight:after {
+  width: 2px;
+  height: 70px;
+  background: linear-gradient(
+  transparent,
+  #E0B589,
+  transparent
+  );
+  position: absolute;
+  content: "";
+  right: -1px;
+  top: 50%;
+  opacity: 0;
+  transition: top 600ms ease,
+  opacity 600ms ease;
+}
+
+.hoverlight:hover:after {
+  top: 10%;
+  opacity: 1;
+}
+
+body * {
+  @apply transition-colors duration-75;
+}

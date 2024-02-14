@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdLightMode, MdDarkMode, MdMenu } from "react-icons/md";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useEffect, useState } from "react";
-import pdf from "../assets/john_ladipo_resume.pdf";
+import pdf from "../assets/resume.pdf";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const Nav = () => {
   }, [theme]);
 
   return (
-    <nav className='sticky top-0 z-10 shadow-md bg-white dark:bg-slate-900 dark:text-white duration-100'>
+    <nav className='sticky top-0 z-10 shadow-md bg-[#E0B589] dark:bg-slate-900 dark:text-white duration-100'>
       <div className='mx-auto 2xl:max-w-screen-xl p-2 sm:px-6 lg:px-8'>
         <div className='flex justify-between'>
           <Link
@@ -52,7 +52,7 @@ const Nav = () => {
                 className={`focus:outline-none ${
                   navOpen
                     ? "bg-[#332E16] text-white"
-                    : "text-gray-300 hover:bg-[#332E16] hover:text-white"
+                    : "text-black dark:text-gray-200 hover:bg-[#332E16] hover:text-white"
                 } md:hidden order-last cursor-pointer relative 
                   px-3 py-2 rounded-md text-sm font-medium `}
                 onClick={() => setNavOpen(!navOpen)}
@@ -65,7 +65,7 @@ const Nav = () => {
               className={`${navOpen ? "block" : "hidden"} md:flex md:space-x-4`}
             >
               <DropdownMenu.Content
-                className='flex flex-col md:flex-row md:space-x-4 right-2 bg-white dark:bg-slate-900 md:bg-inherit px-1 py-2 items-center md:gap-0 rounded-b-xl w-max'
+                className='flex flex-col md:flex-row md:space-x-4 right-2 bg-[#E0B589] dark:bg-slate-900 md:bg-inherit px-1 py-2 items-center md:gap-0 rounded-b-xl w-max'
                 sideOffset={5}
               >
                 <DropdownMenu.Item className='DropdownMenuItem'>
